@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Clínica Psiquiátrica Saint Veritas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      background-color: #2e2e2e;
+      color: #e8e8e8;
+    }
+    header {
+      background-color: #444;
+      padding: 30px;
+      text-align: center;
+      border-bottom: 4px solid #555;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.8em;
+      color: #fff;
+    }
+    nav {
+      background-color: #3b3b3b;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: #ddd;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .section {
+      margin-bottom: 50px;
+    }
+    h2 {
+      border-bottom: 2px solid #666;
+      padding-bottom: 5px;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 5px;
+      margin: 20px 0;
+    }
+    form {
+      background-color: #444;
+      padding: 20px;
+      border-radius: 5px;
+      margin-top: 50px;
+    }
+    input {
+      padding: 10px;
+      margin-bottom: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #666;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    #hidden-content {
+      display: none;
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #1a1a1a;
+      border: 1px solid #333;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Clínica Psiquiátrica Saint Veritas</h1>
+  </header>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#equipe">Equipe Médica</a>
+    <a href="#login">Área Restrita</a>
+  </nav>
+  <div class="container">
+    <section id="sobre" class="section">
+      <h2>Sobre a Clínica</h2>
+      <p>
+        A Clínica Psiquiátrica Saint Veritas atua desde 1919 na recuperação de pacientes com distúrbios psicológicos severos. Reconhecida em Dark Water e regiões vizinhas por seu comprometimento com o cuidado humano, privacidade e métodos modernos de reabilitação mental.
+      </p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Old_Mental_Asylum.jpg" alt="Foto da fachada da clínica">
+    </section>
+
+    <section id="equipe" class="section">
+      <h2>Equipe Médica</h2>
+      <p>
+        Nosso corpo clínico é formado por especialistas com décadas de experiência em psiquiatria, neurologia e psicoterapia integrativa.
+      </p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Vintage_Doctors_1947.jpg" alt="Foto antiga da equipe médica">
+    </section>
+
+    <section id="login" class="section">
+      <h2>Área Restrita</h2>
+      <form onsubmit="event.preventDefault(); checkLogin();">
+        <label for="usuario">Usuário:</label>
+        <input type="text" id="usuario" name="usuario" required />
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required />
+
+        <button type="submit">Entrar</button>
+      </form>
+      <div id="hidden-content">
+        <h2>Relatório do Caso: Sarah Fisher</h2>
+        <p>
+          A paciente demonstrava comportamento estável durante os primeiros exames clínicos. Não apresentava sinais clássicos de psicopatia ou esquizofrenia. Entretanto, foi notado um aumento progressivo de episódios alucinatórios diretamente ligados à exposição prolongada às próprias obras.
+        </p>
+        <p>
+          Em fases avançadas, a paciente falava sobre "camadas de percepção", "formas conscientes na tinta" e um "terceiro plano de existência". Seu colapso final coincidiu com a conclusão de uma obra que jamais foi encontrada após o incêndio.
+        </p>
+        <p>
+          Status: Internação permanente. Diagnóstico não finalizado. Último registro: a paciente sussurrava números repetidamente enquanto desenhava em paredes com os dedos.
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    function checkLogin() {
+      const usuario = document.getElementById('usuario').value;
+      const senha = document.getElementById('senha').value;
+      if (usuario === "DrMontenegro" && senha === "monter1313") {
+        document.getElementById("hidden-content").style.display = "block";
+      } else {
+        alert("Acesso negado. Credenciais incorretas.");
+      }
+    }
+  </script>
+</body>
+</html>
